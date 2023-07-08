@@ -4,13 +4,19 @@
 
 <u>合肥师范学院平面图：</u>
 
-![平面图绘制png](file://C:\Users\10251\Desktop\大二上学期学习文件\2022.cpp\课程设计_敖文康_孙佳乐_张安齐_校园导游图\课程设计——21级计算机类—校园导游图\平面图绘制.png?msec=1688823785975)
+
+
+![平面图绘制.png](C:\Users\10251\Desktop\gitPush\平面图绘制.png)
+
+登陆效果图：
+
+![](C:\Users\10251\AppData\Roaming\marktext\images\2023-07-08-21-46-05-image.png)
 
 <mark>！！！注意事项：</mark>
 
 需要在D盘下创建login_Management_admin.txt文件或者修改成自定义路径作为登陆的账号存放的文件
 
-![](file://C:\Users\10251\AppData\Roaming\marktext\images\2023-07-08-21-28-38-image.png?msec=1688823785973)
+![](C:\Users\10251\AppData\Roaming\marktext\images\2023-07-08-21-28-38-image.png)
 
 **核心代码：**
 
