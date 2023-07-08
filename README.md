@@ -1,22 +1,9 @@
 # 基于图结构最短路径算法的校园导航（c++）
 
 ###### 课设:校园导游咨询系统V1.0 完成时间:2022年5月22日16:37:25
-
-<u>合肥师范学院平面图：</u>
-
-
-
-![平面图绘制.png](C:\Users\10251\Desktop\gitPush\平面图绘制.png)
-
-登陆效果图：
-
-![](C:\Users\10251\AppData\Roaming\marktext\images\2023-07-08-21-46-05-image.png)
-
 <mark>！！！注意事项：</mark>
 
 需要在D盘下创建login_Management_admin.txt文件或者修改成自定义路径作为登陆的账号存放的文件
-
-![](C:\Users\10251\AppData\Roaming\marktext\images\2023-07-08-21-28-38-image.png)
 
 **核心代码：**
 
