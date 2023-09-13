@@ -1,33 +1,30 @@
 /*
-   ¿ÎÉè:Ğ£Ô°µ¼ÓÎ×ÉÑ¯ÏµÍ³V1.0
-   Íê³ÉÊ±¼ä:2022Äê5ÔÂ22ÈÕ16:37:25
-   ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
+   è¯¾è®¾:æ ¡å›­å¯¼æ¸¸å’¨è¯¢ç³»ç»ŸV1.0
+   å®Œæˆæ—¶é—´:2022å¹´5æœˆ22æ—¥16:37:25
 */
 #include<iostream>
 #include<stdio.h>
 #include<string.h>
 #include<windows.h>
 using namespace std;
-#define Maxint 1000     //Á½µã²»Á¬Í¨µÄ³£Á¿
-const int Max_n=1000;   //×î´óÊıÁ¿
+#define Maxint 1000     //ä¸¤ç‚¹ä¸è¿é€šçš„å¸¸é‡
+const int Max_n=1000;   //æœ€å¤§æ•°é‡
 class Meau
 {
   public:
-		int number;						 //Ñ¡Ôñ
-		int index_temp_admin = 0;		 //µÇÈëÕË»§ÊÇ·ñÕıÈ·±êÖ¾
-		char Admin_temp[10];			 //ÓÃ»§ÊäÈëµÄÕËºÅ
-		char Admin_insert_flie[10];		 //²åÈëÎÄ¼şµÄÓÃ»§Ãû
-		//Ö÷²Ëµ¥
+		int number;						 //é€‰æ‹©
+		int index_temp_admin = 0;		 //ç™»å…¥è´¦æˆ·æ˜¯å¦æ­£ç¡®æ ‡å¿—
+		char Admin_temp[10];			 //ç”¨æˆ·è¾“å…¥çš„è´¦å·
+		char Admin_insert_flie[10];		 //æ’å…¥æ–‡ä»¶çš„ç”¨æˆ·å
+		//ä¸»èœå•
 		void meau_main(void)
 		{
-            cout<<"¿Î³ÌÉè¼ÆÖ÷Ìâ:Ğ£Ô°µ¼ÓÎ×ÉÑ¯ÏµÍ³  °æ±¾V1.0"<<endl<<endl;
-			printf("          µÇÈë´°¿Ú    \n");
-			printf("     >>1.µÇÈëÒÑÓĞÕË»§\n");
-			printf("     >>2.´´½¨ĞÂÕË»§\n");
-			printf("     >>3.ÍË³ö\n");
-			//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+            cout<<"è¯¾ç¨‹è®¾è®¡ä¸»é¢˜:æ ¡å›­å¯¼æ¸¸å’¨è¯¢ç³»ç»Ÿ  ç‰ˆæœ¬V1.0"<<endl<<endl;
+			printf("          ç™»å…¥çª—å£    \n");
+			printf("     >>1.ç™»å…¥å·²æœ‰è´¦æˆ·\n");
+			printf("     >>2.åˆ›å»ºæ–°è´¦æˆ·\n");
+			printf("     >>3.é€€å‡º\n");
+			
 			cout<<"     PLEASE YOU CHIOCE:";
 		}
 		void input_Admin_insert_flie()
@@ -39,7 +36,7 @@ class Meau
 				puts("Fail to open file!");
 				exit(0);
 			}
-			//ÕË»§ÊıÁ¿Òª´ÓÎÄ¼şÖĞ´´½¨²¢¶ÁÈ¡
+			//è´¦æˆ·æ•°é‡è¦ä»æ–‡ä»¶ä¸­åˆ›å»ºå¹¶è¯»å–
 			strcat(str, "\n");
 			strcat(str, Admin_insert_flie);
 			fputs(str, fp);
@@ -53,19 +50,19 @@ class Meau
 			int flag = 0;
 			if ((fp = fopen("D:\\login_Management_admin.txt", "r")) == NULL)
 			{
-				cout << "\nÎ´´´½¨ĞÂÕË»§" << endl;
-				cout << "Çë´´½¨ÕË»§....." << endl;
+				cout << "\næœªåˆ›å»ºæ–°è´¦æˆ·" << endl;
+				cout << "è¯·åˆ›å»ºè´¦æˆ·....." << endl;
 				system("PAUSE");
 				system("cls");
 			}
-			// fscanf(fp,"%d",n);  //´ÓÎÄ¼şÖĞ¶ÁÈëÕË»§ÊıÁ¿
+			// fscanf(fp,"%d",n);  //ä»æ–‡ä»¶ä¸­è¯»å…¥è´¦æˆ·æ•°é‡
 			for (int i = 0; i < 100; i++)
 			{
-				fscanf(fp, "%s", &File_user_admin[i]); //´ÓÎÄ¼şÖĞ¶ÁÓÃ»§id
+				fscanf(fp, "%s", &File_user_admin[i]); //ä»æ–‡ä»¶ä¸­è¯»ç”¨æˆ·id
 			}
 			for (int i = 0; i < 100; i++)
 			{
-				if (strcmp(Admin_temp, File_user_admin[i]) == 0) //ÓÃ»§ÕËºÅÊäÈë³É¹¦
+				if (strcmp(Admin_temp, File_user_admin[i]) == 0) //ç”¨æˆ·è´¦å·è¾“å…¥æˆåŠŸ
 				{
 					index_temp_admin = 1;
 					break;
@@ -73,9 +70,7 @@ class Meau
 			}
 			fclose(fp);
 		}
-		//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+	
 		void choic_abc()
 		{
 			cin>>number;
@@ -89,16 +84,16 @@ class Meau
 				if(index_temp_admin==1) 
 				{
 					system("cls");
-					cout<<"¹§Ï²Äã µÇÈë³É¹¦£¡"<<endl;
+					cout<<"æ­å–œä½  ç™»å…¥æˆåŠŸï¼"<<endl;
 				}
 				break;
 			}
 			case 2:
 			{
-				 cout<<"ÇëÊäÈëÕËºÅ£º";
+				 cout<<"è¯·è¾“å…¥è´¦å·ï¼š";
 				 cin>>Admin_insert_flie;
 				 input_Admin_insert_flie();
-				 cout<<"´´½¨³É¹¦£¡"<<endl;
+				 cout<<"åˆ›å»ºæˆåŠŸï¼"<<endl;
 				 Sleep(2000);
 				 system("cls");
 				 meau_main();
@@ -108,12 +103,12 @@ class Meau
 				readfile_admin();
 				system("cls");
 				if(index_temp_admin==1) 
-				cout<<"¹§Ï²Äã µÇÈë³É¹¦£¡"<<endl;
+				cout<<"æ­å–œä½  ç™»å…¥æˆåŠŸï¼"<<endl;
 				break;
 			}
 			case 3:
 			      {
-					  cout<<">>ÒÑÍË³öµÇÈë´°¿Ú";
+					  cout<<">>å·²é€€å‡ºç™»å…¥çª—å£";
 					  exit(0);
 					  system("pause");
 					  break;
@@ -126,96 +121,91 @@ class Meau
 };
 typedef struct 
 {
-	char name[Max_n];       //¾°µãÃû³Æ
-	char number[Max_n];     //¾°µã´úºÅ
-	char Introduce[Max_n];  //½éÉÜ¼ò³Æ
-}DataType;//¾°µãÏà¹ØĞÅÏ¢
+	char name[Max_n];       //æ™¯ç‚¹åç§°
+	char number[Max_n];     //æ™¯ç‚¹ä»£å·
+	char Introduce[Max_n];  //ä»‹ç»ç®€ç§°
+}DataType;//æ™¯ç‚¹ç›¸å…³ä¿¡æ¯
 
 typedef struct
 {
-	int num;          //±àºÅ
-	DataType data;   //Ïà¹ØĞÅÏ¢
-}ScSpot;//¾°µã
+	int num;          //ç¼–å·
+	DataType data;   //ç›¸å…³ä¿¡æ¯
+}ScSpot;//æ™¯ç‚¹
 
 typedef struct 
 {
-	ScSpot Scspot[13];//Ê®¶ş¸ö¾°µã,0ºÅÎ»ÖÃ²»Ê¹ÓÃ
-	int D[13][13];    //¹¹½¨ÁÚ½Ó¾ØÕó,¾°µã¼äµÄ¾àÀë
-}UDG;                 //Õâ¸öÀàĞÍ°üº¬ÁË¸÷¸ö¾°µãµÄ¹ØÏµ,¸÷¸ö¾°µãµÄ»ù±¾ĞÅÏ¢
+	ScSpot Scspot[13];//åäºŒä¸ªæ™¯ç‚¹,0å·ä½ç½®ä¸ä½¿ç”¨
+	int D[13][13];    //æ„å»ºé‚»æ¥çŸ©é˜µ,æ™¯ç‚¹é—´çš„è·ç¦»
+}UDG;                 //è¿™ä¸ªç±»å‹åŒ…å«äº†å„ä¸ªæ™¯ç‚¹çš„å…³ç³»,å„ä¸ªæ™¯ç‚¹çš„åŸºæœ¬ä¿¡æ¯
 
 UDG G;              
 int Path[12][12];
 int D[12][12];
-//È«¾Ö±äÁ¿
+//å…¨å±€å˜é‡
 
-/*³õÊ¼»¯¾°µãĞÅÏ¢*/
+/*åˆå§‹åŒ–æ™¯ç‚¹ä¿¡æ¯*/
 void InitMes()
 {
-	//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
 	int count=1;
 	G.Scspot[count].num=1;
 	strcpy(G.Scspot[count].data.number,"num.001");
-	strcpy(G.Scspot[count].data.name,"¶«´óÃÅ");
-	strcpy(G.Scspot[count].data.Introduce,"Ñ§Ğ£µÄ¹Ø¼üÈë¿ÚÖ®Ò»");
+	strcpy(G.Scspot[count].data.name,"ä¸œå¤§é—¨");
+	strcpy(G.Scspot[count].data.Introduce,"å­¦æ ¡çš„å…³é”®å…¥å£ä¹‹ä¸€");
 	count++;
 	G.Scspot[count].num=2;
 	strcpy(G.Scspot[count].data.number,"num.002");
-	strcpy(G.Scspot[count].data.name,"ÄĞÉúËŞÉáABC¶°");
-	strcpy(G.Scspot[count].data.Introduce,"Ë¯¾õ");
+	strcpy(G.Scspot[count].data.name,"ç”·ç”Ÿå®¿èˆABCæ ‹");
+	strcpy(G.Scspot[count].data.Introduce,"ç¡è§‰");
 	count++;
 	G.Scspot[count].num=3;
 	strcpy(G.Scspot[count].data.number,"num.003");
-	strcpy(G.Scspot[count].data.name,"²©Ñ§Â¥");
-	strcpy(G.Scspot[count].data.Introduce,"Ñ§Ğ£Ä¿Ç°µÄÖ÷Òª½ÌÑ§Â¥");
+	strcpy(G.Scspot[count].data.name,"åšå­¦æ¥¼");
+	strcpy(G.Scspot[count].data.Introduce,"å­¦æ ¡ç›®å‰çš„ä¸»è¦æ•™å­¦æ¥¼");
 	count++;
 	G.Scspot[count].num=4;
 	strcpy(G.Scspot[count].data.number,"num.004");
-	strcpy(G.Scspot[count].data.name,"Ãú´«Â¥");
-	strcpy(G.Scspot[count].data.Introduce,"µÚÒ»²ã»¹ÓĞÒ»¸öĞ¡Ğ¡µÄÍ¼Êé¹İ");
+	strcpy(G.Scspot[count].data.name,"é“­ä¼ æ¥¼");
+	strcpy(G.Scspot[count].data.Introduce,"ç¬¬ä¸€å±‚è¿˜æœ‰ä¸€ä¸ªå°å°çš„å›¾ä¹¦é¦†");
 	count++;
 	G.Scspot[count].num=5;
 	strcpy(G.Scspot[count].data.number,"num.005");
-	strcpy(G.Scspot[count].data.name,"ÔË¶¯Çø");
+	strcpy(G.Scspot[count].data.name,"è¿åŠ¨åŒº");
 	strcpy(G.Scspot[count].data.Introduce,"PLAY!");
 	count++;
-	//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+
 	G.Scspot[count].num=6;
 	strcpy(G.Scspot[count].data.number,"num.006");
-	strcpy(G.Scspot[count].data.name,"Å®ÉúËŞÉá");
-	strcpy(G.Scspot[count].data.Introduce,"Ë¯¾õ");
+	strcpy(G.Scspot[count].data.name,"å¥³ç”Ÿå®¿èˆ");
+	strcpy(G.Scspot[count].data.Introduce,"ç¡è§‰");
 	count++;
 	G.Scspot[count].num=7;
 	strcpy(G.Scspot[count].data.number,"num.007");
-	strcpy(G.Scspot[count].data.name,"ºş");
-	strcpy(G.Scspot[count].data.Introduce,"´ËµØ·ç¾°ÃÀºÃ!");
+	strcpy(G.Scspot[count].data.name,"æ¹–");
+	strcpy(G.Scspot[count].data.Introduce,"æ­¤åœ°é£æ™¯ç¾å¥½!");
 	count++;
 	G.Scspot[count].num=8;
 	strcpy(G.Scspot[count].data.number,"num.008");
-	strcpy(G.Scspot[count].data.name,"²Ù³¡");
-	strcpy(G.Scspot[count].data.Introduce,"ÅÜÒÕÌåÍ¨ ³å³å³å£¡");
+	strcpy(G.Scspot[count].data.name,"æ“åœº");
+	strcpy(G.Scspot[count].data.Introduce,"è·‘è‰ºä½“é€š å†²å†²å†²ï¼");
 	count++;
 	G.Scspot[count].num=9;
 	strcpy(G.Scspot[count].data.number,"num.009");
-	strcpy(G.Scspot[count].data.name,"Ê³ÌÃ");
-	strcpy(G.Scspot[count].data.Introduce,"¸É·¹");
+	strcpy(G.Scspot[count].data.name,"é£Ÿå ‚");
+	strcpy(G.Scspot[count].data.Introduce,"å¹²é¥­");
 	count++;
 	G.Scspot[count].num=10;
 	strcpy(G.Scspot[count].data.number,"num.010");
-	strcpy(G.Scspot[count].data.name,"D¶°ÄĞÉúËŞÉá");
-	strcpy(G.Scspot[count].data.Introduce,"Ë¯¾õ");
+	strcpy(G.Scspot[count].data.name,"Dæ ‹ç”·ç”Ÿå®¿èˆ");
+	strcpy(G.Scspot[count].data.Introduce,"ç¡è§‰");
 	count++;
 	G.Scspot[count].num=11;
 	strcpy(G.Scspot[count].data.number,"num.011");
-	strcpy(G.Scspot[count].data.name,"Ğ¡¶«ÃÅ");
-	strcpy(G.Scspot[count].data.Introduce,"È¡¿ìµİ ÄÃÍâÂôµÄµØµã");
+	strcpy(G.Scspot[count].data.name,"å°ä¸œé—¨");
+	strcpy(G.Scspot[count].data.Introduce,"å–å¿«é€’ æ‹¿å¤–å–çš„åœ°ç‚¹");
 	count++;
 	strcpy(G.Scspot[count].data.number,"num.012");
-	strcpy(G.Scspot[count].data.name,"³¬ÊĞ");
-	strcpy(G.Scspot[count].data.Introduce,"ÂòÉú»îÓÃÆ·ºÍÊ³Îï");
+	strcpy(G.Scspot[count].data.name,"è¶…å¸‚");
+	strcpy(G.Scspot[count].data.Introduce,"ä¹°ç”Ÿæ´»ç”¨å“å’Œé£Ÿç‰©");
 	count++;
 	for(int i=1;i<=12;i++)
     {
@@ -233,7 +223,7 @@ void InitMes()
 			}
 		}
 	}
-    //Â·¾¶³õÊ¼»¯Çø       -->ÓÉÌâÒâ Ë«ÏòÇø
+    //è·¯å¾„åˆå§‹åŒ–åŒº       -->ç”±é¢˜æ„ åŒå‘åŒº
 	G.D[1][2]=100;       G.D[2][1]=100;
 	G.D[1][3]=80;        G.D[3][1]=80;
 	G.D[1][5]=110;       G.D[5][1]=110;
@@ -249,152 +239,146 @@ void InitMes()
 	G.D[9][12]=30;       G.D[12][9]=30;
 	G.D[12][10]=60;      G.D[12][10]=60;
 }
-/*ĞŞ¸Ä¾°µãĞÅÏ¢*/
-void ChangeSpeMes(int i)//ÔÚĞŞ¸ÄÊ±Îñ±ØÊäÈë²»³åÍ»µÄĞÅÏ¢
+/*ä¿®æ”¹æ™¯ç‚¹ä¿¡æ¯*/
+void ChangeSpeMes(int i)//åœ¨ä¿®æ”¹æ—¶åŠ¡å¿…è¾“å…¥ä¸å†²çªçš„ä¿¡æ¯
 {
 	printf("------------------------------\n");
-	printf("1.¾°µã´úºÅ\n");
-	printf("2.¾°µãÃû³Æ\n");
-	printf("3.¾°µã¼ò½é\n");
+	printf("1.æ™¯ç‚¹ä»£å·\n");
+	printf("2.æ™¯ç‚¹åç§°\n");
+	printf("3.æ™¯ç‚¹ç®€ä»‹\n");
 	printf("------------------------------\n");
-	printf(">>ÇëÑ¡ÔñÄúÒªĞŞ¸ÄµÄ¾°µãĞÅÏ¢:");
+	printf(">>è¯·é€‰æ‹©æ‚¨è¦ä¿®æ”¹çš„æ™¯ç‚¹ä¿¡æ¯:");
 	int chose;
 	scanf("%d",&chose);
 	if(chose==1)
 	{
-		printf("ÇëÖ±½ÓÊäÈëĞŞ¸ÄºóµÄ¾°µãºóµÄ¾°µã´úºÅ:");
+		printf("è¯·ç›´æ¥è¾“å…¥ä¿®æ”¹åçš„æ™¯ç‚¹åçš„æ™¯ç‚¹ä»£å·:");
 		scanf("%s",G.Scspot[i].data.number);
 	}
-	//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+
 	else if(chose==2)
 	{
-		printf("ÇëÖ±½ÓÊäÈëĞŞ¸ÄºóµÄ¾°µãºóµÄ¾°µãÃû³Æ:");
+		printf("è¯·ç›´æ¥è¾“å…¥ä¿®æ”¹åçš„æ™¯ç‚¹åçš„æ™¯ç‚¹åç§°:");
 		scanf("%s",G.Scspot[i].data.name);
 	}
 	else if(chose==3)
 	{
-		printf("ÇëÖ±½ÓÊäÈëĞŞ¸ÄºóµÄ¾°µãºóµÄ¾°µã¼ò½é:");
+		printf("è¯·ç›´æ¥è¾“å…¥ä¿®æ”¹åçš„æ™¯ç‚¹åçš„æ™¯ç‚¹ç®€ä»‹:");
 		scanf("%s",G.Scspot[i].data.Introduce);
 	}
 	else
 	{
-		printf("ÊäÈë´íÎó,ÇëÊäÈëÕıÈ·µÄÑ¡Ôñ.");
+		printf("è¾“å…¥é”™è¯¯,è¯·è¾“å…¥æ­£ç¡®çš„é€‰æ‹©.");
 		ChangeSpeMes(i);
 	}
-	printf("ĞŞ¸Ä³É¹¦,ĞŞ¸ÄºóµÄ¾°µãĞÅÏ¢Îª:\n");
+	printf("ä¿®æ”¹æˆåŠŸ,ä¿®æ”¹åçš„æ™¯ç‚¹ä¿¡æ¯ä¸º:\n");
 	printf("------------------------------\n");
-	printf("¾°µã´úºÅ:%s\n",G.Scspot[i].data.number);
-	printf("¾°µãÃû³Æ:%s\n",G.Scspot[i].data.name);
-	printf("¾°µã¼ò½é:%s\n",G.Scspot[i].data.Introduce);
+	printf("æ™¯ç‚¹ä»£å·:%s\n",G.Scspot[i].data.number);
+	printf("æ™¯ç‚¹åç§°:%s\n",G.Scspot[i].data.name);
+	printf("æ™¯ç‚¹ç®€ä»‹:%s\n",G.Scspot[i].data.Introduce);
 	printf("------------------------------\n");
 	system("pause");
 	system("cls");
 }
-/*ĞŞ¸Ä¾°µãĞÅÏ¢*/
+/*ä¿®æ”¹æ™¯ç‚¹ä¿¡æ¯*/
 void  ChangeMes()
 {
-	printf(">>ÇëÊäÈëÄúÒªĞŞ¸ÄµÄ¾°µãµÄ±àºÅ:");
+	printf(">>è¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„æ™¯ç‚¹çš„ç¼–å·:");
 	int chose;
 	scanf("%d",&chose);
 	ChangeSpeMes(chose);
 }
-/*²é¿´Ğ£Ô°Æ½ÃæÍ¼*/
+/*æŸ¥çœ‹æ ¡å›­å¹³é¢å›¾*/
 void View()
 {
-	//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
-    printf("                                                                                   ±±\n");
+
+    printf("                                                                                   åŒ—\n");
     printf("                                                                                   |\n"); 
     printf("                                                                                   |\n"); 
-    printf("                                                                                   |------>¶«\n");       
-	printf("---------------------------ºÏ·ÊÊ¦·¶Ñ§ÔºĞ£Ô°Æ½ÃæÍ¼-------------------------------\n");
+    printf("                                                                                   |------>ä¸œ\n");       
+	printf("---------------------------åˆè‚¥å¸ˆèŒƒå­¦é™¢æ ¡å›­å¹³é¢å›¾-------------------------------\n");
 	printf(" *********************************************************************************\n");
-    printf(" **          10.D¶°ÄĞÉúËŞÉá_                                                    **\n");
-	printf(" **          |            |      <Î´Öª>Ê©¹¤Çø                                   **\n");
-	printf(" **          |__12.³¬ÊĞ___|                                                     **\n");
-	printf(" **          |            |                       3.²©Ñ§Â¥DÇø________           **\n");
+    printf(" **          10.Dæ ‹ç”·ç”Ÿå®¿èˆ_                                                    **\n");
+	printf(" **          |            |      <æœªçŸ¥>æ–½å·¥åŒº                                   **\n");
+	printf(" **          |__12.è¶…å¸‚___|                                                     **\n");
+	printf(" **          |            |                       3.åšå­¦æ¥¼DåŒº________           **\n");
     printf(" **          |____________|____________________________|            |           **\n");
-	printf(" **          |            |    |                       |_______3.²©Ñ§Â¥CÇø      **\n");
-	printf(" **          |___9.Ê³ÌÃ___|    |                       |           |            **\n");
-	printf(" **          |            |    |_____________________3.²©Ñ§Â¥BÇø   |            **\n");
-	printf(" ** 8.²Ù³¡___|____________|________|  7.ºş      |       |          |            **\n");
-	printf(" **          |            |        |____________|       |          |<Î´Öª>Ê©¹¤Çø**\n");
-	printf(" **          |            |           |         |__3.²©Ñ§Â¥AÇø_____|            **\n");
+	printf(" **          |            |    |                       |_______3.åšå­¦æ¥¼CåŒº      **\n");
+	printf(" **          |___9.é£Ÿå ‚___|    |                       |           |            **\n");
+	printf(" **          |            |    |_____________________3.åšå­¦æ¥¼BåŒº   |            **\n");
+	printf(" ** 8.æ“åœº___|____________|________|  7.æ¹–      |       |          |            **\n");
+	printf(" **          |            |        |____________|       |          |<æœªçŸ¥>æ–½å·¥åŒº**\n");
+	printf(" **          |            |           |         |__3.åšå­¦æ¥¼AåŒº_____|            **\n");
 	printf(" **          |            |           |            |                            **\n");
-	printf(" **          |            |      4.Ãú´«Â¥          |                            **\n");
-	printf(" **          |    6.Å®ÉúËŞÉá_______________________|___________2.(ABC)¶°ÄĞÉúËŞÉá**\n");
+	printf(" **          |            |      4.é“­ä¼ æ¥¼          |                            **\n");
+	printf(" **          |    6.å¥³ç”Ÿå®¿èˆ_______________________|___________2.(ABC)æ ‹ç”·ç”Ÿå®¿èˆ**\n");
 	printf(" **          |                 |       |           |                            **\n");
-	printf(" **          |                5.ÔË¶¯ÌåÓıÇø         |                            **\n");
+	printf(" **          |                5.è¿åŠ¨ä½“è‚²åŒº         |                            **\n");
 	printf(" **          |                                     |                            **\n");
-	printf(" **       11.Ğ¡¶«ÃÅ                           1.¶«´óÃÅ                          **\n");
+	printf(" **       11.å°ä¸œé—¨                           1.ä¸œå¤§é—¨                          **\n");
 	printf(" *********************************************************************************\n");
-	printf(">>Enter¼ü·µ»ØÖ÷½çÃæ¼ÌĞø½øĞĞÑ¡Ôñ\n");
+	printf(">>Enteré”®è¿”å›ä¸»ç•Œé¢ç»§ç»­è¿›è¡Œé€‰æ‹©\n");
 	system("pause");
 	system("cls");
 }
-/*²é¿´¾°µãĞÅÏ¢*/
+/*æŸ¥çœ‹æ™¯ç‚¹ä¿¡æ¯*/
 void ViewSpeMes(int i)
 {
 
-	printf("±àºÅÎª%dµÄ¾°µãµÄĞÅÏ¢Îª:\n",i);
+	printf("ç¼–å·ä¸º%dçš„æ™¯ç‚¹çš„ä¿¡æ¯ä¸º:\n",i);
 	printf("---------------------------------------------\n");
-	printf("¾°µã´úºÅ:%s\n",G.Scspot[i].data.number);
-	printf("¾°µãÃû³Æ:%s\n",G.Scspot[i].data.name);
-	printf("¾°µã¼ò½é:%s\n",G.Scspot[i].data.Introduce);
+	printf("æ™¯ç‚¹ä»£å·:%s\n",G.Scspot[i].data.number);
+	printf("æ™¯ç‚¹åç§°:%s\n",G.Scspot[i].data.name);
+	printf("æ™¯ç‚¹ç®€ä»‹:%s\n",G.Scspot[i].data.Introduce);
 	printf("---------------------------------------------\n");
 }
-/*²éÑ¯¾°µãĞÅÏ¢*/
+/*æŸ¥è¯¢æ™¯ç‚¹ä¿¡æ¯*/
 void ViewMes()
 {           
-	printf("                                                                                   ±±\n");
+	printf("                                                                                   åŒ—\n");
     printf("                                                                                   |\n"); 
     printf("                                                                                   |\n"); 
-    printf("                                                                                   |------>¶«\n");       
-	printf("---------------------------ºÏ·ÊÊ¦·¶Ñ§ÔºĞ£Ô°Æ½ÃæÍ¼-------------------------------\n");
+    printf("                                                                                   |------>ä¸œ\n");       
+	printf("---------------------------åˆè‚¥å¸ˆèŒƒå­¦é™¢æ ¡å›­å¹³é¢å›¾-------------------------------\n");
 	printf(" *********************************************************************************\n");
-    printf(" **          10.D¶°ÄĞÉúËŞÉá_                                                    **\n");
-	printf(" **          |            |      <Î´Öª>Ê©¹¤Çø                                   **\n");
-	printf(" **          |__12.³¬ÊĞ___|                                                     **\n");
-	printf(" **          |            |                       3.²©Ñ§Â¥DÇø________           **\n");
+    printf(" **          10.Dæ ‹ç”·ç”Ÿå®¿èˆ_                                                    **\n");
+	printf(" **          |            |      <æœªçŸ¥>æ–½å·¥åŒº                                   **\n");
+	printf(" **          |__12.è¶…å¸‚___|                                                     **\n");
+	printf(" **          |            |                       3.åšå­¦æ¥¼DåŒº________           **\n");
     printf(" **          |____________|____________________________|            |           **\n");
-	printf(" **          |            |    |                       |_______3.²©Ñ§Â¥CÇø      **\n");
-	printf(" **          |___9.Ê³ÌÃ___|    |                       |           |            **\n");
-	printf(" **          |            |    |_____________________3.²©Ñ§Â¥BÇø   |            **\n");
-	printf(" ** 8.²Ù³¡___|____________|________|  7.ºş      |       |          |            **\n");
-	printf(" **          |            |        |____________|       |          |<Î´Öª>Ê©¹¤Çø**\n");
-	printf(" **          |            |           |         |__3.²©Ñ§Â¥AÇø_____|            **\n");
+	printf(" **          |            |    |                       |_______3.åšå­¦æ¥¼CåŒº      **\n");
+	printf(" **          |___9.é£Ÿå ‚___|    |                       |           |            **\n");
+	printf(" **          |            |    |_____________________3.åšå­¦æ¥¼BåŒº   |            **\n");
+	printf(" ** 8.æ“åœº___|____________|________|  7.æ¹–      |       |          |            **\n");
+	printf(" **          |            |        |____________|       |          |<æœªçŸ¥>æ–½å·¥åŒº**\n");
+	printf(" **          |            |           |         |__3.åšå­¦æ¥¼AåŒº_____|            **\n");
 	printf(" **          |            |           |            |                            **\n");
-	printf(" **          |            |      4.Ãú´«Â¥          |                            **\n");
-	printf(" **          |    6.Å®ÉúËŞÉá_______________________|___________2.(ABC)¶°ÄĞÉúËŞÉá**\n");
+	printf(" **          |            |      4.é“­ä¼ æ¥¼          |                            **\n");
+	printf(" **          |    6.å¥³ç”Ÿå®¿èˆ_______________________|___________2.(ABC)æ ‹ç”·ç”Ÿå®¿èˆ**\n");
 	printf(" **          |                 |       |           |                            **\n");
-	printf(" **          |                5.ÔË¶¯ÌåÓıÇø         |                            **\n");
+	printf(" **          |                5.è¿åŠ¨ä½“è‚²åŒº         |                            **\n");
 	printf(" **          |                                     |                            **\n");
-	printf(" **       11.Ğ¡¶«ÃÅ                           1.¶«´óÃÅ                          **\n");
+	printf(" **       11.å°ä¸œé—¨                           1.ä¸œå¤§é—¨                          **\n");
 	printf(" *********************************************************************************\n");                   
-	//±£Ö¤ÊäÈëºÏ·¨
-	printf("ÇëÊäÈëÄúÒª²é¿´µÄ¾°µãĞÅÏ¢µÄ±àºÅ:");
+	//ä¿è¯è¾“å…¥åˆæ³•
+	printf("è¯·è¾“å…¥æ‚¨è¦æŸ¥çœ‹çš„æ™¯ç‚¹ä¿¡æ¯çš„ç¼–å·:");
 	int chose;
 	scanf("%d",&chose);
 	ViewSpeMes(chose);
-	printf("²éÑ¯Íê±Ï!ÊÇ·ñ¼ÌĞø²éÑ¯?(Y/N)");
+	printf("æŸ¥è¯¢å®Œæ¯•!æ˜¯å¦ç»§ç»­æŸ¥è¯¢?(Y/N)");
 	char b;
 	scanf(" %c",&b);
-	//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+	
 	if(b=='Y')
 	{
-		printf("ÄúÑ¡ÔñÁË¼ÌĞø²éÑ¯!\n");
+		printf("æ‚¨é€‰æ‹©äº†ç»§ç»­æŸ¥è¯¢!\n");
 		ViewMes();
 	}
-	printf(">>²éÑ¯½áÊø,Enter¼ü½øÈëÖ÷½çÃæ\n");
+	printf(">>æŸ¥è¯¢ç»“æŸ,Enteré”®è¿›å…¥ä¸»ç•Œé¢\n");
 	system("pause");
 	system("cls");
 }
-/*Çó³öÈÎÒâÁ½µãÖ®¼äµÄ×î¶Ì¾àÀë*/
+/*æ±‚å‡ºä»»æ„ä¸¤ç‚¹ä¹‹é—´çš„æœ€çŸ­è·ç¦»*/
 void ShortestPath_Floyd()
 {
 	for(int i=1;i<=12;i++)
@@ -402,7 +386,7 @@ void ShortestPath_Floyd()
 		for(int j=1;j<=12;j++)
 		{
 			D[i][j]=G.D[i][j];
-			if(D[i][j]<Maxint&&i!=j)  Path[i][j]=j;  //Á½¶¥µãÓĞÂ·,ºó¼ÌÖÃÎªj
+			if(D[i][j]<Maxint&&i!=j)  Path[i][j]=j;  //ä¸¤é¡¶ç‚¹æœ‰è·¯,åç»§ç½®ä¸ºj
 			else Path[i][j]=-1;
 		}
 	}
@@ -412,72 +396,70 @@ void ShortestPath_Floyd()
 		{
 			for(int j=1;j<=12;j++)
 			{
-				if(D[i][k]+D[k][j]<D[i][j])     //´æÔÚ¸ü¶ÌµÄÂ·¾¶
+				if(D[i][k]+D[k][j]<D[i][j])     //å­˜åœ¨æ›´çŸ­çš„è·¯å¾„
 				{   
-					D[i][j]=D[i][k]+D[k][j];    //¸üĞÂÖµ
-					Path[i][j]=Path[i][k];      //¸ü¸ÄiµÄºó¼ÌÎªk
+					D[i][j]=D[i][k]+D[k][j];    //æ›´æ–°å€¼
+					Path[i][j]=Path[i][k];      //æ›´æ”¹içš„åç»§ä¸ºk
 				}
 			}
 		}
-		//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+
 	}
 }
 
-/*´òÓ¡Â·¾¶µÄº¯Êı*/
+/*æ‰“å°è·¯å¾„çš„å‡½æ•°*/
 void OutPath(int s,int e)
 {
 	int next=s;
-	printf(">>Â·¾¶Îª:\n");
+	printf(">>è·¯å¾„ä¸º:\n");
 	while(next!=e)
     {
 		printf("%s-->",G.Scspot[next].data.name);
-		next=Path[next][e];//µ±Ç°µÄºó¼ÌµãµÄ±àºÅ
+		next=Path[next][e];//å½“å‰çš„åç»§ç‚¹çš„ç¼–å·
 	}
 	printf("%s\n",G.Scspot[e].data.name);
 }
-/*´òÓ¡×î¶ÌÂ·¾¶¼°×î¶Ì¾àÀë*/
+/*æ‰“å°æœ€çŸ­è·¯å¾„åŠæœ€çŸ­è·ç¦»*/
 void PrintPath()
 {
-	ShortestPath_Floyd();//Ô¤´¦ÀíËùÓĞµÄ×î¶ÌÂ·¾¶
-	printf("                                                                                   ±±\n");
+	ShortestPath_Floyd();//é¢„å¤„ç†æ‰€æœ‰çš„æœ€çŸ­è·¯å¾„
+	printf("                                                                                   åŒ—\n");
     printf("                                                                                   |\n"); 
     printf("                                                                                   |\n"); 
-    printf("                                                                                   |------>¶«\n");       
-	printf("-------------------------------ºÏ·ÊÊ¦·¶Ñ§ÔºĞ£Ô°Æ½ÃæÍ¼-------------------------------\n");
+    printf("                                                                                   |------>ä¸œ\n");       
+	printf("-------------------------------åˆè‚¥å¸ˆèŒƒå­¦é™¢æ ¡å›­å¹³é¢å›¾-------------------------------\n");
 	printf(" *********************************************************************************\n");
-    printf(" **          10.D¶°ÄĞÉúËŞÉá_                                                    **\n");
-	printf(" **          |            |      <Î´Öª>Ê©¹¤Çø                                   **\n");
-	printf(" **          |__12.³¬ÊĞ___|                                                     **\n");
-	printf(" **          |            |                       3.²©Ñ§Â¥DÇø________           **\n");
+    printf(" **          10.Dæ ‹ç”·ç”Ÿå®¿èˆ_                                                    **\n");
+	printf(" **          |            |      <æœªçŸ¥>æ–½å·¥åŒº                                   **\n");
+	printf(" **          |__12.è¶…å¸‚___|                                                     **\n");
+	printf(" **          |            |                       3.åšå­¦æ¥¼DåŒº________           **\n");
     printf(" **          |____________|____________________________|            |           **\n");
-	printf(" **          |            |    |                       |_______3.²©Ñ§Â¥CÇø      **\n");
-	printf(" **          |___9.Ê³ÌÃ___|    |                       |           |            **\n");
-	printf(" **          |            |    |_____________________3.²©Ñ§Â¥BÇø   |            **\n");
-	printf(" ** 8.²Ù³¡___|____________|________|  7.ºş      |       |          |            **\n");
-	printf(" **          |            |        |____________|       |          |<Î´Öª>Ê©¹¤Çø**\n");
-	printf(" **          |            |           |         |__3.²©Ñ§Â¥AÇø_____|            **\n");
+	printf(" **          |            |    |                       |_______3.åšå­¦æ¥¼CåŒº      **\n");
+	printf(" **          |___9.é£Ÿå ‚___|    |                       |           |            **\n");
+	printf(" **          |            |    |_____________________3.åšå­¦æ¥¼BåŒº   |            **\n");
+	printf(" ** 8.æ“åœº___|____________|________|  7.æ¹–      |       |          |            **\n");
+	printf(" **          |            |        |____________|       |          |<æœªçŸ¥>æ–½å·¥åŒº**\n");
+	printf(" **          |            |           |         |__3.åšå­¦æ¥¼AåŒº_____|            **\n");
 	printf(" **          |            |           |            |                            **\n");
-	printf(" **          |            |      4.Ãú´«Â¥          |                            **\n");
-	printf(" **          |    6.Å®ÉúËŞÉá_______________________|___________2.(ABC)¶°ÄĞÉúËŞÉá**\n");
+	printf(" **          |            |      4.é“­ä¼ æ¥¼          |                            **\n");
+	printf(" **          |    6.å¥³ç”Ÿå®¿èˆ_______________________|___________2.(ABC)æ ‹ç”·ç”Ÿå®¿èˆ**\n");
 	printf(" **          |                 |       |           |                            **\n");
-	printf(" **          |                5.ÔË¶¯ÌåÓıÇø         |                            **\n");
+	printf(" **          |                5.è¿åŠ¨ä½“è‚²åŒº         |                            **\n");
 	printf(" **          |                                     |                            **\n");
-	printf(" **       11.Ğ¡¶«ÃÅ                           1.¶«´óÃÅ                          **\n");
+	printf(" **       11.å°ä¸œé—¨                           1.ä¸œå¤§é—¨                          **\n");
 	printf(" *********************************************************************************\n");
-	printf("¶ÔÕÕĞ£Ô°Æ½ÃæÍ¼,ÊäÈëÄúµ±Ç°ËùÔÚ¾°µã¼°ÄúÒªÈ¥µÄ¾°µãµÄ±àºÅ:");
+	printf("å¯¹ç…§æ ¡å›­å¹³é¢å›¾,è¾“å…¥æ‚¨å½“å‰æ‰€åœ¨æ™¯ç‚¹åŠæ‚¨è¦å»çš„æ™¯ç‚¹çš„ç¼–å·:");
 	int s,e;
 	scanf("%d%d",&s,&e);
 	if(s<=12&&s>=0&&e<=12&&e>=0){
-		printf(">>%sµ½%sµÄ×î¶ÌÂ·¾¶³¤¶ÈÎª: %dm\n",G.Scspot[s].data.name,G.Scspot[e].data.name,D[s][e]);
+		printf(">>%såˆ°%sçš„æœ€çŸ­è·¯å¾„é•¿åº¦ä¸º: %dm\n",G.Scspot[s].data.name,G.Scspot[e].data.name,D[s][e]);
 		OutPath(s,e);
-		printf(">>°´Enter¼ü·µ»ØÖ÷½çÃæ");
+		printf(">>æŒ‰Enteré”®è¿”å›ä¸»ç•Œé¢");
 		system("pause");
 		system("cls");
 	}else{
-		printf("±àºÅÊäÈë´íÎó,ÇëÖØĞÂÊäÈëÕıÈ·µÄ¾°µã±àºÅ!\n");
-		printf("°´Enter¼üÖØĞÂÊäÈë");
+		printf("ç¼–å·è¾“å…¥é”™è¯¯,è¯·é‡æ–°è¾“å…¥æ­£ç¡®çš„æ™¯ç‚¹ç¼–å·!\n");
+		printf("æŒ‰Enteré”®é‡æ–°è¾“å…¥");
 		system("pause");
 		system("cls");
 		PrintPath();
@@ -486,15 +468,15 @@ void PrintPath()
 }
 void Menu()
 {
-	printf("------------»¶Ó­½øÈëºÏÊ¦Ğ£Ô°µ¼º½ÏµÍ³V1.0------------\n");
+	printf("------------æ¬¢è¿è¿›å…¥åˆå¸ˆæ ¡å›­å¯¼èˆªç³»ç»ŸV1.0------------\n");
 	printf("\n----------------------------------------------------\n");
-	printf("1.²é¿´Ğ£Ô°Æ½ÃæÍ¼\n");
-	printf("2.ĞŞ¸Ä¾°µãĞÅÏ¢\n");
-	printf("3.²é¿´¾°µã»ù±¾ĞÅÏ¢\n");
-	printf("4.×î¶ÌÂ·¾¶²éÑ¯\n");
-	printf("5.ÍË³ö\n");
+	printf("1.æŸ¥çœ‹æ ¡å›­å¹³é¢å›¾\n");
+	printf("2.ä¿®æ”¹æ™¯ç‚¹ä¿¡æ¯\n");
+	printf("3.æŸ¥çœ‹æ™¯ç‚¹åŸºæœ¬ä¿¡æ¯\n");
+	printf("4.æœ€çŸ­è·¯å¾„æŸ¥è¯¢\n");
+	printf("5.é€€å‡º\n");
 	printf("----------------------------------------------------\n");
-	printf(">>ÇëÊäÈëÄúÒªÑ¡ÔñµÄ¹¦ÄÜ:");
+	printf(">>è¯·è¾“å…¥æ‚¨è¦é€‰æ‹©çš„åŠŸèƒ½:");
 	int chose;
 	scanf("%d",&chose);
 	switch(chose)
@@ -504,9 +486,7 @@ void Menu()
 			View();
 			Menu();
 		}
-		//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+	
 		case 2: 
 		{
 			ChangeMes();
@@ -525,13 +505,11 @@ void Menu()
 		case 5:
 		 {
 			exit(0);
-			//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+			
 		}
 		default : 
 		{
-			printf("ÄúµÄÑ¡ÔñÓĞÎó,ÇëÖØĞÂÑ¡Ôñ!");
+			printf("æ‚¨çš„é€‰æ‹©æœ‰è¯¯,è¯·é‡æ–°é€‰æ‹©!");
 			Menu();
 		}
 	}
@@ -545,59 +523,57 @@ int main()
 	if(A.index_temp_admin==1)
 	{
 	int abc;
-	printf(">>ÇëÑ¡ÔñÒÔÏÂµØÍ¼³õÊ¼»¯(Ä¿Ç°½öÓĞºÏ·ÊÊ¦·¶Ñ§ÔºµÄ¼òÔ¼¾°µãÍ¼£¬´ıºóĞøÏµÍ³¸üĞÂ)\n");
-	printf("1.ºÏ·ÊÊ¦·¶Ñ§ÔºĞ£Ô°¾°µãÍ¼\n");
-	printf("2.¾´ÇëÆÚ´ı¡¤¡¤¡¤¡¤¡¤\n");
-	printf("3.¾´ÇëÆÚ´ı¡¤¡¤¡¤¡¤¡¤\n");
+	printf(">>è¯·é€‰æ‹©ä»¥ä¸‹åœ°å›¾åˆå§‹åŒ–(ç›®å‰ä»…æœ‰åˆè‚¥å¸ˆèŒƒå­¦é™¢çš„ç®€çº¦æ™¯ç‚¹å›¾ï¼Œå¾…åç»­ç³»ç»Ÿæ›´æ–°)\n");
+	printf("1.åˆè‚¥å¸ˆèŒƒå­¦é™¢æ ¡å›­æ™¯ç‚¹å›¾\n");
+	printf("2.æ•¬è¯·æœŸå¾…Â·Â·Â·Â·Â·\n");
+	printf("3.æ•¬è¯·æœŸå¾…Â·Â·Â·Â·Â·\n");
 	printf("PLease you chioce:");
     scanf("%d",&abc);
 	if(abc==1)
 	{
      	InitMes();
-	    printf("³õÊ¼»¯ÖĞ");
+	    printf("åˆå§‹åŒ–ä¸­");
 		for(int i=1;i<=5;i++)
 		{
             printf(".");
 			Sleep(500);
 		}
 		printf("\n");
-	    printf("¾°µãĞÅÏ¢³õÊ¼»¯³É¹¦,½øÈëÖ÷½çÃæ\n");
+	    printf("æ™¯ç‚¹ä¿¡æ¯åˆå§‹åŒ–æˆåŠŸ,è¿›å…¥ä¸»ç•Œé¢\n");
 		Sleep(2000);
 		system("cls");
 	    Menu();
 	}
 	else
 	{
-		printf("³õÊ¼»¯ÖĞ");
+		printf("åˆå§‹åŒ–ä¸­");
 		for(int i=1;i<=5;i++)
 		{
             printf(".");
 			Sleep(600);
 		}
-		//ÍÅ¶Ó£º°½ÎÄ¿µ Ëï¼ÑÀÖ ÕÅ°²Æë
-			//Ö÷Òª¸ºÔğÈË£º°½ÎÄ¿µ
-			//Qq:1025181600
+		
 		printf("\n");
-		printf("¾°µãĞÅÏ¢³õÊ¼»¯Ê§°Ü\n");
+		printf("æ™¯ç‚¹ä¿¡æ¯åˆå§‹åŒ–å¤±è´¥\n");
 		Sleep(2000);
 		system("cls");
-	    printf(">>ÇëÖØĞÂÑ¡ÔñÒÔÏÂµØÍ¼³õÊ¼»¯(Ä¿Ç°½öÓĞºÏ·ÊÊ¦·¶Ñ§ÔºµÄ¼òÔ¼¾°µãÍ¼£¬´ıºóĞøÏµÍ³¸üĞÂ)\n");
-	    printf("1.ºÏ·ÊÊ¦·¶Ñ§ÔºĞ£Ô°¾°µãÍ¼\n");
-	    printf("2.¾´ÇëÆÚ´ı¡¤¡¤¡¤¡¤¡¤\n");
-	    printf("3.¾´ÇëÆÚ´ı¡¤¡¤¡¤¡¤¡¤\n");
+	    printf(">>è¯·é‡æ–°é€‰æ‹©ä»¥ä¸‹åœ°å›¾åˆå§‹åŒ–(ç›®å‰ä»…æœ‰åˆè‚¥å¸ˆèŒƒå­¦é™¢çš„ç®€çº¦æ™¯ç‚¹å›¾ï¼Œå¾…åç»­ç³»ç»Ÿæ›´æ–°)\n");
+	    printf("1.åˆè‚¥å¸ˆèŒƒå­¦é™¢æ ¡å›­æ™¯ç‚¹å›¾\n");
+	    printf("2.æ•¬è¯·æœŸå¾…Â·Â·Â·Â·Â·\n");
+	    printf("3.æ•¬è¯·æœŸå¾…Â·Â·Â·Â·Â·\n");
 	    printf("PLease you chioce:");
 	    scanf("%d",&abc);
 	   if(abc==1)
 	 {
      	 InitMes();
-		printf("³õÊ¼»¯ÖĞ");
+		printf("åˆå§‹åŒ–ä¸­");
 		for(int i=1;i<=5;i++)
 		{
             printf(".");
 			Sleep(500);
 		}
 		 printf("\n");
-     	 printf("¾°µãĞÅÏ¢³õÊ¼»¯³É¹¦,½øÈëÖ÷½çÃæ\n");
+     	 printf("æ™¯ç‚¹ä¿¡æ¯åˆå§‹åŒ–æˆåŠŸ,è¿›å…¥ä¸»ç•Œé¢\n");
 		 Sleep(2000);
 		 system("cls");
 	     Menu();
@@ -606,8 +582,8 @@ int main()
 	}
 	else
 	{
-		cout<<endl<<"±§Ç¸ µÇÈëÊ§°Ü£¡"<<endl;
-		cout<<"Ô­Òò£ºÕËºÅ²»´æÔÚ»òÕËºÅÊäÈë´íÎó"<<endl;
+		cout<<endl<<"æŠ±æ­‰ ç™»å…¥å¤±è´¥ï¼"<<endl;
+		cout<<"åŸå› ï¼šè´¦å·ä¸å­˜åœ¨æˆ–è´¦å·è¾“å…¥é”™è¯¯"<<endl;
 		system("pause");
 	}
 	return 0;
